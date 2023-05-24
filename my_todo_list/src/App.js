@@ -19,6 +19,9 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (task === '') {
+      return false;
+    }
     setList((prev) => [...prev, {
       id: uuidv4(),
       task,
