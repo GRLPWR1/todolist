@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Form from './components/Form.jsx';
-import List from './components/List.jsx'
-
+import Header from './components/Header/Header.jsx'
+import Main from './components/Main/Main.jsx'
+import Footer from './components/Footer/Footer.jsx'
 import './App.css';
 import { v4 as uuidv4 } from 'uuid';
 uuidv4();
@@ -42,32 +42,15 @@ function App() {
 
   return (
     <>
-      <section className="vh-100" >
-        <div className="container py-5 h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col col-xl-10">
-
-              <div className="card" >
-                <div className="card-body p-5">
-
-                  <h6 className="mb-3">Awesome Todo List</h6>
-                  <Form
-                    task={task}
-                    setTask={setTask}
-                    handleSubmit={handleSubmit}
-                  />
-                  <List
-                    list={list}
-                    changeStatus={changeStatus}
-                  />
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      <Header />
+      <Main
+        task={task}
+        setTask={setTask}
+        handleSubmit={handleSubmit}
+        changeStatus={changeStatus}
+        list={list}
+      />
+      <Footer />
     </>
   );
 }
